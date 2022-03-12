@@ -1,6 +1,9 @@
 variable "location" {
   type = string
 }
+variable "app" {
+  type = string
+}
 variable "environment" {
   type = string
 }

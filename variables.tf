@@ -1,19 +1,22 @@
 # Define Base Variables
 
 variable "location" {
-  type = string
+  type    = string
+  default = "eastus2"
 }
 variable "environment" {
-  type = string
+  type    = string
+  default = "dev"
 }
 variable "app" {
-  type = string
+  type    = string
+  default = "iad"
 }
-variable "loc_acronym_map" {
-  type = map(any)
-  default = {
-    eastus    = "use",
-    eastus2   = "use2",
-    uscentral = "uscn"
-  }
+variable "subscription_id" {
+  type    = string
+  default = "d58fbfba-be42-4145-9b37-31fd8cf19dc1"
+}
+variable "tenant_id" {
+  type    = string
+  default = "c7f6413d-1e73-45d2-b0da-a68713b515a7"
 }

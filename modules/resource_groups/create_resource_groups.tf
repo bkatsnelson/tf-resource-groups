@@ -22,7 +22,7 @@ locals {
 #----------------------------------------------------------
 
 resource "azurerm_resource_group" "rg-postgres" {
-  name     = "rg-postgres-${var.resource_qualifier}-001"
+  name     = "rg-${var.app}-postgres-${var.resource_qualifier}-001"
   location = var.location
   tags = {
     Environment = local.environment
@@ -31,7 +31,7 @@ resource "azurerm_resource_group" "rg-postgres" {
 }
 
 resource "azurerm_resource_group" "rg-sql" {
-  name     = "rg-sql-${var.resource_qualifier}-001"
+  name     = "rg-${var.app}-sql-${var.resource_qualifier}-001"
   location = var.location
   tags = {
     Environment = local.environment
@@ -40,7 +40,7 @@ resource "azurerm_resource_group" "rg-sql" {
 }
 
 resource "azurerm_resource_group" "rg-app-service" {
-  name     = "rg-app-service-${var.resource_qualifier}-001"
+  name     = "rg-${var.app}-appsvc-${var.resource_qualifier}-001"
   location = var.location
   tags = {
     Environment = local.environment
@@ -49,7 +49,7 @@ resource "azurerm_resource_group" "rg-app-service" {
 }
 
 resource "azurerm_resource_group" "rg-aks" {
-  name     = "rg-aks-${var.resource_qualifier}-001"
+  name     = "rg-${var.app}-aks-${var.resource_qualifier}-001"
   location = var.location
   tags = {
     Environment = local.environment
@@ -58,7 +58,7 @@ resource "azurerm_resource_group" "rg-aks" {
 }
 
 resource "azurerm_resource_group" "rg-vm" {
-  name     = "rg-vm-${var.resource_qualifier}-001"
+  name     = "rg-${var.app}-vm-${var.resource_qualifier}-001"
   location = var.location
   tags = {
     Environment = local.environment
