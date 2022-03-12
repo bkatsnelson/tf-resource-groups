@@ -6,17 +6,13 @@ variable "location" {
 }
 variable "environment" {
   type    = string
-  default = "dev"
+  default = "qa"
 }
 variable "app" {
   type    = string
-  default = "iad"
+  default = "hr"
 }
 variable "subscription_id" {
   type    = string
-  default = "d58fbfba-be42-4145-9b37-31fd8cf19dc1"
-}
-variable "tenant_id" {
-  type    = string
-  default = "c7f6413d-1e73-45d2-b0da-a68713b515a7"
+  default = "c15bb9c5-2f4d-4112-b6d0-aa2434d885c9"
 }

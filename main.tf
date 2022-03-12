@@ -45,7 +45,7 @@ data "terraform_remote_state" "network_shared" {
 provider "azurerm" {
   features {}
   subscription_id = var.subscription_id
-  tenant_id       = var.tenant_id
+  tenant_id       = data.terraform_remote_state.network_shared.outputs.tenant_id
 }
 
 #----------------------------------------------------------
