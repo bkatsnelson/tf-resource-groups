@@ -21,10 +21,10 @@ terraform {
   }
   backend "azurerm" {
     resource_group_name  = "cloud-shell-storage-eastus"
-    storage_account_name = "stsmbcllabbkatsnelsonuse"
+    storage_account_name = "cs2100320009f4f648c"
     container_name       = "tf-resource-groups"
-    key                  = "terraform.state.dblab.dev"
-    subscription_id      = "a57c592f-99a2-47b4-a046-bbc696cc98f7"
+    key                  = "terraform.state.bmk.dev"
+    subscription_id      = "90724b70-548e-401e-91c8-0a914f4645c4"
   }
 }
 
