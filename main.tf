@@ -20,26 +20,12 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name  = "rg-cloud-shell-nonprod-use"
-    storage_account_name = "stsmbcbkatsnelsonuse"
+    resource_group_name  = "cloud-shell-storage-eastus"
+    storage_account_name = "stsmbcllabbkatsnelsonuse"
     container_name       = "tf-resource-groups"
-    key                  = "terraform.state"
-    subscription_id      = "c15bb9c5-2f4d-4112-b6d0-aa2434d885c9"
+    key                  = "terraform.state.dblab.dev"
+    subscription_id      = "a57c592f-99a2-47b4-a046-bbc696cc98f7"
   }
-}
-
-data "terraform_remote_state" "network_shared" {
-  backend = "azurerm"
-
-  config = {
-    resource_group_name  = "rg-cloud-shell-nonprod-use"
-    storage_account_name = "stsmbcbkatsnelsonuse"
-    container_name       = "tf-net-shared"
-    // use hr-network-nonprod-use2 workspace
-    key             = "terraform.stateenv:hr-network-nonprod-use2"
-    subscription_id = "c15bb9c5-2f4d-4112-b6d0-aa2434d885c9"
-  }
-
 }
 
 provider "azurerm" {
@@ -53,7 +39,7 @@ provider "azurerm" {
 #----------------------------------------------------------
 
 locals {
-  loc_acronym        = data.terraform_remote_state.network_shared.outputs.loc_acronym_map[var.location]
+  loc_acronym        = var.loc_acronym_map[var.location]
   resource_qualifier = "${var.environment}-${local.loc_acronym}"
 }
 

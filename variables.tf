@@ -2,7 +2,7 @@
 
 variable "location" {
   type    = string
-  default = "eastus2"
+  default = "eastus"
 }
 variable "environment" {
   type    = string
@@ -10,13 +10,21 @@ variable "environment" {
 }
 variable "app" {
   type    = string
-  default = "iad"
+  default = "itkpi"
+}
+variable "loc_acronym_map" {
+  type = map(any)
+  default = {
+    eastus    = "use",
+    eastus2   = "use2",
+    uscentral = "uscn"
+  }
 }
 variable "subscription_id" {
   type    = string
-  default = "d58fbfba-be42-4145-9b37-31fd8cf19dc1"
+  default = "a57c592f-99a2-47b4-a046-bbc696cc98f7"
 }
 variable "tenant_id" {
   type    = string
-  default = "c7f6413d-1e73-45d2-b0da-a68713b515a7"
+  default = "032c0190-9b24-49f2-b7fc-27fad11e8caa"
 }
